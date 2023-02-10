@@ -1,0 +1,10 @@
+.bookshelves-bg-section {
+  display: flex;
+}
+.bookshelves-list {
+  display: flex;
+}
+.books-section {
+  display: flex;
+  flex-grow: 1;
+}

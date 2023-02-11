@@ -88,25 +88,34 @@ class Login extends Component {
       return <Redirect to="/" />
     }
     return (
-      <div>
-        <img
-          src="https://res.cloudinary.com/df5saokjj/image/upload/v1675825779/Book%20hub/Book%20hub%20medium%20and%20large/Rectangle_1467login_xlsxkg.png"
-          alt=""
-          className="login-image"
-        />
-        <div>
+      <div className="login-container">
+        <div className="login-image-container">
+          <img
+            src="https://res.cloudinary.com/df5saokjj/image/upload/v1676037587/Ellipse_99_qoruws.png"
+            alt=""
+            className="login-image"
+          />
+        </div>
+        <div className="md-login-image-container">
+          <img
+            src="https://res.cloudinary.com/df5saokjj/image/upload/v1675825779/Book%20hub/Book%20hub%20medium%20and%20large/Rectangle_1467login_xlsxkg.png"
+            alt=""
+            className="md-login-image"
+          />
+        </div>
+        <div className="form-container">
+          <img
+            src="https://res.cloudinary.com/df5saokjj/image/upload/v1675824167/Book%20hub/Group_7732_erur1z.png"
+            alt=""
+            className="login-website-logo"
+          />
           <form className="form-control" onSubmit={this.onSubmitForm}>
-            <img
-              src="https://res.cloudinary.com/df5saokjj/image/upload/v1675824167/Book%20hub/Group_7732_erur1z.png"
-              alt=""
-              className="login-logo"
-            />
             <div className="input-container">{this.renderUsernameField()}</div>
             <div className="input-container">{this.renderPasswordField()}</div>
+            {showSubmitError && <p className="error-message">{errorMsg}</p>}
             <button type="submit" className="login-button">
               Login
             </button>
-            {showSubmitError && <p className="error-message">{errorMsg}</p>}
           </form>
         </div>
       </div>

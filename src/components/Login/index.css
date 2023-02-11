@@ -1,0 +1,95 @@
+.login-container {
+  padding: 10px;
+  margin: 20px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .md-login-image-container {
+    display: none;
+  }
+}
+
+.login-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.login-image {
+  height: 216px;
+  width: 216px;
+  border-radius: 120px;
+}
+
+@media screen and (min-width: 768px) {
+  .login-image-container {
+    display: none;
+  }
+  .login-container {
+    display: flex;
+  }
+}
+
+.md-login-image {
+  height: 800px;
+  width: 580px;
+  background-size: cover;
+  margin-right: 20px;
+}
+
+.login-website-logo {
+  height: 28px;
+  width: 104px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+.input-label {
+  height: 19px;
+  width: 94px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 10px;
+
+  color: #5a7184;
+}
+.username-input-field {
+  height: 56px;
+  width: 312px;
+  background: #ffffff;
+  border: 1px solid #c3cad9;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.password-input-field {
+  height: 56px;
+  width: 312px;
+  background: #ffffff;
+  border: 1px solid #c3cad9;
+  border-radius: 8px;
+}
+
+.login-button {
+  height: 40px;
+  width: 312px;
+  background-color: #0284c7;
+  border: 0;
+  color: #ffffff;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.error-message {
+  color: #ef4444;
+  font-size: 14px;
+}

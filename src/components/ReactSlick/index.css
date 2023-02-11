@@ -1,4 +1,5 @@
 .main-container {
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,9 +13,10 @@
 }
 
 .logo-image {
-  margin: 0px 10px;
-  width: 250px;
-  height: 200px;
+  margin-left: 0px 10px;
+  width: 146px;
+  height: 99px;
+  border-radius: 2px;
 }
 
 .slick-prev:before,

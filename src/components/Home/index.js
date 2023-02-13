@@ -5,6 +5,7 @@ import Loader from 'react-loader-spinner'
 
 import Header from '../Header'
 import ReactSlick from '../ReactSlick'
+import Footer from '../Footer'
 
 import './index.css'
 
@@ -105,41 +106,49 @@ class Home extends Component {
     }
   }
 
-  render() {
-    return (
-      <div className="home-page">
-        <Header />
-        <div className="bg-container">
-          <div className="top-container">
-            <h1 className="heading">Find Your Next Favorite Books?</h1>
-            <p className="paragraph">
-              You are in the right place. Tell us what titles or geners you have
-              enjoyed in the past, and we will give you surprisingly insightful
-              recommendations.
-            </p>
-            <div className="find-books">
-              <Link to="/shelf">
-                <button className="find-books-btn" type="button">
-                  Find Books
-                </button>
-              </Link>
-            </div>
-          </div>
-          <div>
-            <button className="md-find-books">
-              <Link to="/shelf">
-                <button className="find-books-btn" type="button">
-                  Find Books
-                </button>
-              </Link>
+  renderHomeContainer = () => (
+    <div className="home-container">
+      <div className="top-container">
+        <h1 className="main-heading">Find Your Next Favorite Books?</h1>
+        <p className="paragraph">
+          You are in the right place. Tell us what titles or geners you have
+          enjoyed in the past, and we will give you surprisingly insightful
+          recommendations.
+        </p>
+        <div className="find-books">
+          <Link to="/shelf">
+            <button className="find-books-btn" type="button">
+              Find Books
             </button>
-          </div>
-          <div className="bg-top-rated-books">
-            <h1 className="books-heading">Top Rated Books</h1>
-            <div>{this.renderBooksSection()}</div>
-          </div>
+          </Link>
         </div>
       </div>
+
+      <div className="bg-top-rated-books">
+        <div>
+          <h1 className="books-heading">Top Rated Books</h1>
+          <div className="md-find-books">
+            <Link to="/shelf">
+              <button className="find-books-btn" type="button">
+                Find Books
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div>{this.renderBooksSection()}</div>
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </div>
+  )
+
+  render() {
+    return (
+      <>
+        <Header />
+        <div>{this.renderHomeContainer()}</div>
+      </>
     )
   }
 }

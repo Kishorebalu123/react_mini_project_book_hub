@@ -1,0 +1,29 @@
+.cover-pic {
+  min-width: 130px;
+  height: 153px;
+  border-radius: 8px;
+}
+.list-item {
+}
+.each-book {
+  display: flex;
+  align-items: center;
+  height: 160px;
+  margin-bottom: 10px;
+}
+.book-details {
+  margin-left: 10px;
+}
+.book-link {
+  text-decoration: none;
+}
+.book-title {
+  font-size: 16px;
+}
+.author {
+  font-size: 14px;
+}
+.rating {
+  display: flex;
+  font-size: 12px;
+}

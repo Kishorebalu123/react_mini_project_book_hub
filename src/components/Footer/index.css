@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons-container {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-us {
+  font-size: 12px;
+  text-align: center;
+}
+.icon {
+  font-size: 13px;
+  margin-right: 13px;
+}

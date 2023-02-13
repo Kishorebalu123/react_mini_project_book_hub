@@ -1,6 +1,35 @@
-.home-page {
-  height: 645px;
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 360px;
+  height: 645px;
+  background-color: #f5f7fa;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 768px) {
+  .find-books {
+    display: none;
+  }
+  .paragraph {
+    font-size: 24px;
+  }
+
+  .home-page {
+    width: 100vw;
+    height: 100vh;
+  }
+  .bg-container {
+    width: 100vw;
+    height: 95vh;
+  }
+  .main-heading {
+    font-size: 40px;
+  }
 }
 .home-website-logo {
   height: 24px;
@@ -10,9 +39,12 @@
 }
 .bg-container {
   background-color: #e5e5e5;
+  height: 600px;
 }
 
 .top-container {
+  display: flex;
+  flex-direction: column;
   padding-top: 20px;
   padding-bottom: 15px;
   margin-left: 24px;
@@ -28,40 +60,31 @@
   color: #ffffff;
   font-family: 'Roboto';
 }
-.heading {
-  height: 32px;
-  width: 312px;
+.main-heading {
   font-family: 'Roboto';
   font-weight: 600;
   font-size: 20px;
-  line-height: 32px;
-  display: flex;
-  align-items: center;
+
+  color: #1e293b;
 }
 .paragraph {
   font-family: 'Roboto';
-  width: 312px;
-  height: 96px;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
   color: #475569;
-  display: flex;
-  align-items: center;
 }
+
 @media screen and (max-width: 767px) {
   .md-find-books {
     display: none;
   }
 }
+
 .find-books {
   margin-top: 16px;
 }
-@media screen and (min-width: 768px) {
-  .find-books {
-    display: none;
-  }
-}
+
 .books-heading {
   font-size: 16px;
   padding-top: 16px;
@@ -71,4 +94,5 @@
   background-color: #ffffff;
   height: 203px;
   width: 360px;
+  margin-bottom: 70px;
 }

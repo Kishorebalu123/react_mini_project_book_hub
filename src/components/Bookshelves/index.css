@@ -1,10 +1,73 @@
 .bookshelves-bg-section {
   display: flex;
+  flex-direction: column;
+  width: 360px;
+  height: 640px;
+  overflow-y: auto;
+
+  background-color: #f5f7fa;
 }
 .bookshelves-list {
   display: flex;
+  flex-direction: column;
 }
+.search-button {
+  border: 0;
+  width: 52px;
+  height: 34px;
+  background: #edeff1;
+  border-radius: 0px 3px 3px 0px;
+}
+.input-card {
+  margin-top: 24px;
+  margin-left: 24px;
+  display: flex;
+  width: 264px;
+  height: 36px;
+  color: #94a3b8;
+
+  border: 1px solid #cbd5e1;
+}
+.input {
+  width: 211px;
+  height: 34px;
+  border: 0;
+  outline: none;
+  padding: 10px;
+}
+
+.bookshelves-heading {
+  margin-left: 24px;
+  margin-top: 16px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #334155;
+}
+.book-shelf-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 283px;
+  margin-bottom: 0;
+}
+
 .books-section {
   display: flex;
-  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 600px;
+  margin-top: 0;
+  overflow-y: auto;
+}
+.book-items {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }

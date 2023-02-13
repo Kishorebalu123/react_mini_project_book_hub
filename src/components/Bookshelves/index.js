@@ -123,24 +123,11 @@ class Bookshelves extends Component {
   }
 
   renderBooks = () => {
-    const {booksData, searchText} = this.state
+    const {booksData} = this.state
 
     return (
       <div>
-        <div>
-          <h1>All Books</h1>
-          <div>
-            <input
-              type="search"
-              value={searchText}
-              onChange={this.onChangeSearchInput}
-            />
-            <button onClick={this.filterBooks} type="button">
-              <BsSearch />
-            </button>
-          </div>
-        </div>
-        <ul>
+        <ul className="book-items">
           {booksData.map(eachBook => (
             <BookCard bookCard={eachBook} key={eachBook.id} />
           ))}
@@ -169,18 +156,40 @@ class Bookshelves extends Component {
   }
 
   renderBookShelvesSection = () => {
-    const {activeShelf} = this.state
+    const {activeShelf, searchText} = this.state
     return (
-      <ul>
-        {bookshelvesList.map(each => (
-          <Filters
-            key={each.id}
-            shelf={each}
-            isActive={each.value === activeShelf}
-            changeShelf={this.changeShelf}
+      <div>
+        <div className="input-card">
+          <input
+            className="input"
+            type="search"
+            placeholder="Search"
+            value={searchText}
+            onChange={this.onChangeSearchInput}
           />
-        ))}
-      </ul>
+          <button
+            className="search-button"
+            onClick={this.filterBooks}
+            type="button"
+          >
+            <BsSearch />
+          </button>
+        </div>
+
+        <div>
+          <h1 className="bookshelves-heading">Bookshelves</h1>
+          <ul className="book-shelf-list">
+            {bookshelvesList.map(each => (
+              <Filters
+                key={each.id}
+                shelf={each}
+                isActive={each.value === activeShelf}
+                changeShelf={this.changeShelf}
+              />
+            ))}
+          </ul>
+        </div>
+      </div>
     )
   }
 
@@ -196,7 +205,7 @@ class Bookshelves extends Component {
           <div className="bookshelves-list">
             {this.renderBookShelvesSection()}
           </div>
-          <div className="books-section"> {this.renderBooksSection()}</div>
+          <div className="books-section">{this.renderBooksSection()}</div>
         </div>
       </div>
     )

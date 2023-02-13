@@ -1,0 +1,29 @@
+.book-details-container {
+  width: 360px;
+  height: 1032px;
+
+  background: #f5f7fa;
+}
+.details-container {
+  text-align: center;
+  width: 205px;
+  height: 128px;
+  margin-bottom: 20px;
+}
+.cover-img {
+  width: 235px;
+  height: 274px;
+  margin-top: 24px;
+}
+.bg-book-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title-name {
+  font-size: 24px;
+  color: #334155;
+}
+.c {
+}

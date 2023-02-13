@@ -28,7 +28,7 @@ class BookDetails extends Component {
     const {params} = match
     const {id} = params
     const url = `https://apis.ccbp.in/book-hub/books/${id}`
-    console.log(id)
+    //   console.log(id)
     const options = {
       method: 'GET',
       headers: {
@@ -95,11 +95,11 @@ class BookDetails extends Component {
       aboutBook,
     } = bookData
     return (
-      <div>
-        <div>
-          <img src={coverPic} alt="" />
-          <div>
-            <h1>{title}</h1>
+      <div className="book-details-container">
+        <div className="bg-book-container">
+          <img className="cover-img" src={coverPic} alt="" />
+          <div className="details-container">
+            <h1 className="title-name">{title}</h1>
             <p>{authorName}</p>
             <p>
               <span>Avg Rating</span>

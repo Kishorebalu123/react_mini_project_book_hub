@@ -21,6 +21,13 @@
   border-radius: 2px;
   margin: 10px;
 }
+@media screen and (min-width: 768px) {
+  .book-image {
+    width: 300px;
+    height: 224px;
+    border-radius: 2px;
+  }
+}
 
 .slick-prev:before,
 .slick-next:before {
@@ -37,4 +44,12 @@
 .book-link {
   text-decoration: none;
   color: #334155;
+}
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+  .author-name {
+    font-size: 16px;
+  }
 }

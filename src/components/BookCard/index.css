@@ -3,8 +3,7 @@
   height: 153px;
   border-radius: 8px;
 }
-.list-item {
-}
+
 .each-book {
   display: flex;
   align-items: center;

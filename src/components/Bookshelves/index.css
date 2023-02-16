@@ -1,6 +1,8 @@
 .bookshelves-bg-section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 360px;
   height: 640px;
   overflow-y: auto;
@@ -60,7 +62,7 @@
 .books-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   max-height: 600px;
   margin-top: 0;
   overflow-y: auto;
@@ -70,4 +72,23 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+}
+.search-not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  text-align: center;
+}
+.search-img {
+  width: 257px;
+  height: 176px;
+  font-size: 16px;
+}
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

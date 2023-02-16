@@ -92,21 +92,21 @@ class Login extends Component {
         <div className="login-image-container">
           <img
             src="https://res.cloudinary.com/df5saokjj/image/upload/v1676037587/Ellipse_99_qoruws.png"
-            alt=""
+            alt="website login"
             className="login-image"
           />
         </div>
         <div className="md-login-image-container">
           <img
             src="https://res.cloudinary.com/df5saokjj/image/upload/v1675825779/Book%20hub/Book%20hub%20medium%20and%20large/Rectangle_1467login_xlsxkg.png"
-            alt=""
+            alt="website login"
             className="md-login-image"
           />
         </div>
         <div className="form-container">
           <img
             src="https://res.cloudinary.com/df5saokjj/image/upload/v1675824167/Book%20hub/Group_7732_erur1z.png"
-            alt=""
+            alt="login website logo"
             className="login-website-logo"
           />
           <form className="form-control" onSubmit={this.onSubmitForm}>

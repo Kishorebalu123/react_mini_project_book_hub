@@ -3,7 +3,7 @@ import {FaGoogle, FaTwitter, FaInstagram, FaYoutube} from 'react-icons/fa'
 import './index.css'
 
 const Footer = () => (
-  <div className="footer">
+  <div>
     <div className="icons-container">
       <FaGoogle className="icon" />
       <FaTwitter className="icon" />

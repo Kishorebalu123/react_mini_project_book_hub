@@ -12,7 +12,9 @@ const Filters = props => {
 
   return (
     <li className="list-item" onClick={onClickValue} key={id}>
-      <p className={`${activeClassName} shelf-name`}>{label}</p>
+      <button type="button" className={`${activeClassName} shelf-name`}>
+        {label}
+      </button>
     </li>
   )
 }

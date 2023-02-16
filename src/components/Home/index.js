@@ -62,14 +62,14 @@ class Home extends Component {
   }
 
   renderFailureView = () => (
-    <div>
+    <div className="failure-container">
       <img
         src="https://res.cloudinary.com/df5saokjj/image/upload/v1675824260/Book%20hub/Group_7522_m7pvoa.png"
-        alt=""
+        alt="failure view"
       />
-      <p>Something went wrong, please try again.</p>
+      <p>Something went wrong. Please try again</p>
 
-      <button type="button" onClick={this.getTopRatedApi}>
+      <button className="try-again" type="button" onClick={this.getTopRatedApi}>
         Try Again
       </button>
     </div>
@@ -77,26 +77,16 @@ class Home extends Component {
 
   renderLoadingView = () => (
     <div className="loader-container" testid="loader">
-      <Loader type="TailSpin" color="#0284C7" height={50} width={50} />
+      <Loader type="TailSpin" color="#0284C7" height={32} width={32} />
     </div>
   )
 
-  renderTopRatedBooksView = () => {
-    const {booksData} = this.state
-
-    return (
-      <div>
-        <ReactSlick booksData={booksData} />
-      </div>
-    )
-  }
-
-  renderBooksSection = () => {
+  renderHomeContainer = () => {
     const {apiStatus} = this.state
 
     switch (apiStatus) {
       case apiStatusConstants.success:
-        return this.renderTopRatedBooksView()
+        return this.renderSuccessView()
       case apiStatusConstants.failure:
         return this.renderFailureView()
       case apiStatusConstants.inProgress:
@@ -106,28 +96,18 @@ class Home extends Component {
     }
   }
 
-  renderHomeContainer = () => (
-    <div className="home-container">
-      <div className="top-container">
-        <h1 className="main-heading">Find Your Next Favorite Books?</h1>
-        <p className="paragraph">
-          You are in the right place. Tell us what titles or geners you have
-          enjoyed in the past, and we will give you surprisingly insightful
-          recommendations.
-        </p>
-        <div className="find-books">
-          <Link to="/shelf">
-            <button className="find-books-btn" type="button">
-              Find Books
-            </button>
-          </Link>
-        </div>
-      </div>
-
-      <div className="bg-top-rated-books">
-        <div>
-          <h1 className="books-heading">Top Rated Books</h1>
-          <div className="md-find-books">
+  renderSuccessView = () => {
+    const {booksData} = this.state
+    return (
+      <div className="home-success-card">
+        <div className="top-container">
+          <h1 className="main-heading1">Find Your Next Favorite Books?</h1>
+          <p className="paragraph">
+            You are in the right place. Tell us what titles or geners you have
+            enjoyed in the past, and we will give you surprisingly insightful
+            recommendations.
+          </p>
+          <div className="find-books">
             <Link to="/shelf">
               <button className="find-books-btn" type="button">
                 Find Books
@@ -135,19 +115,33 @@ class Home extends Component {
             </Link>
           </div>
         </div>
-        <div>{this.renderBooksSection()}</div>
+
+        <div className="bg-top-rated-books">
+          <div className="top-mini-card">
+            <h1 className="books-heading">Top Rated Books</h1>
+            <div className="md-find-books">
+              <Link to="/shelf">
+                <button className="find-books-btn" type="button">
+                  Find Books
+                </button>
+              </Link>
+            </div>
+          </div>
+          <ReactSlick booksData={booksData} />
+        </div>
+
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
-      <div>
-        <Footer />
-      </div>
-    </div>
-  )
+    )
+  }
 
   render() {
     return (
       <>
         <Header />
-        <div>{this.renderHomeContainer()}</div>
+        <div className="home-container">{this.renderHomeContainer()}</div>
       </>
     )
   }

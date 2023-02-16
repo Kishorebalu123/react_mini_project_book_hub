@@ -7,6 +7,7 @@ import {BsSearch} from 'react-icons/bs'
 import Header from '../Header'
 import Filters from '../Filters'
 import BookCard from '../BookCard'
+import Footer from '../Footer'
 
 import './index.css'
 
@@ -43,7 +44,7 @@ const apiStatusConstants = {
 class Bookshelves extends Component {
   state = {
     activeShelf: bookshelvesList[0].value,
-    booksData: '',
+    booksData: [],
     searchText: '',
     apiStatus: apiStatusConstants.initial,
   }
@@ -88,24 +89,22 @@ class Bookshelves extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="products-loader-container">
-      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    <div className="loader-container" testid="loader">
+      <Loader type="TailSpin" color="#0284C7" height={32} width={32} />
     </div>
   )
 
   renderFailureView = () => (
-    <div className="products-error-view-container">
+    <div className="failure-container">
       <img
-        src="https://assets.ccbp.in/frontend/react-js/nxt-trendz/nxt-trendz-products-error-view.png"
-        alt="products failure"
-        className="products-failure-img"
+        src="https://res.cloudinary.com/df5saokjj/image/upload/v1675824260/Book%20hub/Group_7522_m7pvoa.png"
+        alt="failure view"
       />
-      <h1 className="product-failure-heading-text">
-        Oops! Something Went Wrong
-      </h1>
-      <p className="products-failure-description">
-        We are having some trouble processing your request. Please try again.
-      </p>
+      <p>Something went wrong. Please try again</p>
+
+      <button className="try-again" type="button" onClick={this.getAllBooksApi}>
+        Try Again
+      </button>
     </div>
   )
 
@@ -115,23 +114,43 @@ class Bookshelves extends Component {
 
   filterBooks = () => {
     const {booksData, searchText} = this.state
-    const filteredBooks = booksData.filter(each =>
-      each.title.toUpperCase().includes(searchText.toUpperCase()),
-    )
+    if (searchText !== '') {
+      const filteredBooks = booksData.filter(each =>
+        each.title.toUpperCase().includes(searchText.toUpperCase()),
+      )
 
-    this.setState({booksData: filteredBooks}, this.getAllBooksApi)
+      this.setState({booksData: filteredBooks}, this.getAllBooksApi)
+    }
   }
 
-  renderBooks = () => {
-    const {booksData} = this.state
+  renderSuccessView = () => (
+    <div>
+      <div className="bookshelves-list">{this.renderBookShelvesSection()}</div>
+      <div>{this.renderBooks()}</div>
+      <Footer />
+    </div>
+  )
 
-    return (
+  renderBooks = () => {
+    const {booksData, searchText} = this.state
+    const resultsNotFound = booksData.length !== 0
+    //    console.log(booksData.length)
+    return resultsNotFound ? (
       <div>
         <ul className="book-items">
           {booksData.map(eachBook => (
             <BookCard bookCard={eachBook} key={eachBook.id} />
           ))}
         </ul>
+      </div>
+    ) : (
+      <div className="search-not-found">
+        <img
+          className="search-img"
+          src="https://res.cloudinary.com/df5saokjj/image/upload/v1675825793/Book%20hub/Book%20hub%20medium%20and%20large/Asset_1_1_1_qqdf6h.png"
+          alt="no books"
+        />
+        <p>Your search for {searchText} did not find any matches.</p>
       </div>
     )
   }
@@ -141,7 +160,7 @@ class Bookshelves extends Component {
 
     switch (apiStatus) {
       case apiStatusConstants.success:
-        return this.renderBooks()
+        return this.renderSuccessView()
       case apiStatusConstants.failure:
         return this.renderFailureView()
       case apiStatusConstants.inProgress:
@@ -152,7 +171,7 @@ class Bookshelves extends Component {
   }
 
   onClickShelf = event => {
-    this.setState({activeShelf: event.target.value})
+    this.setState({activeShelf: event.target.value}, this.getAllBooksApi)
   }
 
   renderBookShelvesSection = () => {
@@ -171,6 +190,7 @@ class Bookshelves extends Component {
             className="search-button"
             onClick={this.filterBooks}
             type="button"
+            testid="searchButton"
           >
             <BsSearch />
           </button>
@@ -199,15 +219,12 @@ class Bookshelves extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <Header />
         <div className="bookshelves-bg-section">
-          <div className="bookshelves-list">
-            {this.renderBookShelvesSection()}
-          </div>
           <div className="books-section">{this.renderBooksSection()}</div>
         </div>
-      </div>
+      </>
     )
   }
 }

@@ -1,19 +1,22 @@
 .book-details-container {
   width: 360px;
   height: 1032px;
-
+  display: flex;
+  align-items: flex-start;
   background: #f5f7fa;
+  justify-content: center;
 }
 .details-container {
+  margin: 0px;
   text-align: center;
-  width: 205px;
-  height: 128px;
-  margin-bottom: 20px;
+
+  margin-bottom: 30px;
 }
 .cover-img {
   width: 235px;
   height: 274px;
   margin-top: 24px;
+  margin-bottom: 24px;
 }
 .bg-book-container {
   display: flex;
@@ -22,8 +25,37 @@
   align-items: center;
 }
 .title-name {
-  font-size: 24px;
+  font-size: 22px;
   color: #334155;
+  line-height: 32px;
 }
-.c {
+
+.about {
+  color: #334155;
+  font-size: 16px;
+  margin-left: 24px;
+}
+.description {
+  font-size: 14px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.hr-line {
+  border: 0.5px solid #94a3b8;
+  width: 312px;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+.status {
+  color: #0284c7;
+  font-size: 16px;
+}
+.bg-about {
+  margin-bottom: 100px;
+}
+.star {
+  color: #fbbf24;
+}
+.rating-card {
+  height: 24px;
 }

@@ -1,8 +1,10 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
+import {BsFillStarFill} from 'react-icons/bs'
 
 import Header from '../Header'
+import Footer from '../Footer'
 
 import './index.css'
 
@@ -62,24 +64,22 @@ class BookDetails extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="products-loader-container">
-      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    <div className="loader-container" testid="loader">
+      <Loader type="TailSpin" color="#0284C7" height={32} width={32} />
     </div>
   )
 
   renderFailureView = () => (
-    <div className="products-error-view-container">
+    <div className="failure-container">
       <img
-        src="https://assets.ccbp.in/frontend/react-js/nxt-trendz/nxt-trendz-products-error-view.png"
-        alt="products failure"
-        className="products-failure-img"
+        src="https://res.cloudinary.com/df5saokjj/image/upload/v1675824260/Book%20hub/Group_7522_m7pvoa.png"
+        alt="failure view"
       />
-      <h1 className="product-failure-heading-text">
-        Oops! Something Went Wrong
-      </h1>
-      <p className="products-failure-description">
-        We are having some trouble processing your request. Please try again.
-      </p>
+      <p>Something went wrong. Please try again</p>
+
+      <button className="try-again" type="button" onClick={this.getAllBooksApi}>
+        Try Again
+      </button>
     </div>
   )
 
@@ -95,25 +95,30 @@ class BookDetails extends Component {
       aboutBook,
     } = bookData
     return (
-      <div className="book-details-container">
+      <div>
         <div className="bg-book-container">
-          <img className="cover-img" src={coverPic} alt="" />
+          <img className="cover-img" src={coverPic} alt={title} />
           <div className="details-container">
             <h1 className="title-name">{title}</h1>
             <p>{authorName}</p>
-            <p>
-              <span>Avg Rating</span>
+            <p className="rating-card">
+              Avg Rating <BsFillStarFill className="star" />
               {rating}
             </p>
-            <p>Status: {readStatus}</p>
+            <p>
+              Status:
+              <span className="status"> {readStatus}</span>
+            </p>
           </div>
         </div>
-        <div>
-          <h1>About Author</h1>
-          <p>{aboutAuthor}</p>
-          <h1>About Book</h1>
-          <p>{aboutBook}</p>
+        <hr className="hr-line" />
+        <div className="bg-about">
+          <h1 className="about">About Author</h1>
+          <p className="description">{aboutAuthor}</p>
+          <h1 className="about">About Book</h1>
+          <p className="description">{aboutBook}</p>
         </div>
+        <Footer />
       </div>
     )
   }
@@ -137,7 +142,9 @@ class BookDetails extends Component {
     return (
       <>
         <Header />
-        <div>{this.renderBookDetailsSection()}</div>
+        <div className="book-details-container">
+          {this.renderBookDetailsSection()}
+        </div>
       </>
     )
   }

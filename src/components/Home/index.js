@@ -141,7 +141,7 @@ class Home extends Component {
     return (
       <>
         <Header />
-        <div className="home-container">{this.renderHomeContainer()}</div>
+        <div className="home-container1">{this.renderHomeContainer()}</div>
       </>
     )
   }

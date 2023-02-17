@@ -10,6 +10,12 @@
   height: 160px;
   margin-bottom: 10px;
 }
+@media screen and (min-width: 768px) {
+  .each-book {
+    max-width: 320px;
+    margin-right: 190px;
+  }
+}
 .book-details {
   margin-left: 10px;
 }

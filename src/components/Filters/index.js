@@ -7,7 +7,7 @@ const Filters = props => {
   const activeClassName = isActive ? 'active' : 'non-active'
 
   const onClickValue = () => {
-    changeShelf(value)
+    changeShelf(value, label)
   }
 
   return (

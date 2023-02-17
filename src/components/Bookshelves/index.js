@@ -44,6 +44,7 @@ const apiStatusConstants = {
 class Bookshelves extends Component {
   state = {
     activeShelf: bookshelvesList[0].value,
+    activeLabel: bookshelvesList[0].label,
     booksData: [],
     searchText: '',
     apiStatus: apiStatusConstants.initial,
@@ -123,13 +124,32 @@ class Bookshelves extends Component {
     }
   }
 
-  renderSuccessView = () => (
-    <div>
-      <div className="bookshelves-list">{this.renderBookShelvesSection()}</div>
-      <div>{this.renderBooks()}</div>
-      <Footer />
-    </div>
-  )
+  renderSuccessView = () => {
+    const {activeShelf} = this.state
+
+    return (
+      <div className="md-main-container">
+        <ul className="md-book-shelf-container">
+          <h1 className="md-book-shelf-heading">Bookshelves</h1>
+          {bookshelvesList.map(each => (
+            <Filters
+              key={each.id}
+              shelf={each}
+              isActive={each.value === activeShelf}
+              changeShelf={this.changeShelf}
+            />
+          ))}
+        </ul>
+        <div>
+          <div className="bookshelves-list">
+            {this.renderBookShelvesSection()}
+          </div>
+          <div>{this.renderBooks()}</div>
+          <Footer />
+        </div>
+      </div>
+    )
+  }
 
   renderBooks = () => {
     const {booksData, searchText} = this.state
@@ -175,9 +195,10 @@ class Bookshelves extends Component {
   }
 
   renderBookShelvesSection = () => {
-    const {activeShelf, searchText} = this.state
+    const {activeShelf, activeLabel, searchText} = this.state
     return (
-      <div>
+      <div className="md-bookshelves-container">
+        <h1 className="md-bookshelves-heading">{`${activeLabel} Books`}</h1>
         <div className="input-card">
           <input
             className="input"
@@ -213,8 +234,8 @@ class Bookshelves extends Component {
     )
   }
 
-  changeShelf = activeShelf => {
-    this.setState({activeShelf}, this.getAllBooksApi)
+  changeShelf = (activeShelf, activeLabel) => {
+    this.setState({activeShelf, activeLabel}, this.getAllBooksApi)
   }
 
   render() {

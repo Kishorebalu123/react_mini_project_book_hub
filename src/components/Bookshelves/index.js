@@ -145,7 +145,9 @@ class Bookshelves extends Component {
             {this.renderBookShelvesSection()}
           </div>
           <div>{this.renderBooks()}</div>
-          <Footer />
+          <div className="footer1 ">
+            <Footer />
+          </div>
         </div>
       </div>
     )

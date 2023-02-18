@@ -96,27 +96,29 @@ class BookDetails extends Component {
     } = bookData
     return (
       <div>
-        <div className="bg-book-container">
-          <img className="cover-img" src={coverPic} alt={title} />
-          <div className="details-container">
-            <h1 className="title-name">{title}</h1>
-            <p>{authorName}</p>
-            <p className="rating-card">
-              Avg Rating <BsFillStarFill className="star" />
-              {rating}
-            </p>
-            <p>
-              Status:
-              <span className="status"> {readStatus}</span>
-            </p>
+        <div className="main-book-container">
+          <div className="bg-book-container">
+            <img className="cover-img" src={coverPic} alt={title} />
+            <div className="details-container">
+              <h1 className="title-name">{title}</h1>
+              <p className="author-name2">{authorName}</p>
+              <p className="rating-card">
+                Avg Rating <BsFillStarFill className="star" />
+                {rating}
+              </p>
+              <p className="author-name2">
+                Status:
+                <span className="status"> {readStatus}</span>
+              </p>
+            </div>
           </div>
-        </div>
-        <hr className="hr-line" />
-        <div className="bg-about">
-          <h1 className="about">About Author</h1>
-          <p className="description">{aboutAuthor}</p>
-          <h1 className="about">About Book</h1>
-          <p className="description">{aboutBook}</p>
+          <hr className="hr-line" />
+          <div className="bg-about">
+            <h1 className="about">About Author</h1>
+            <p className="description">{aboutAuthor}</p>
+            <h1 className="about">About Book</h1>
+            <p className="description">{aboutBook}</p>
+          </div>
         </div>
         <Footer />
       </div>

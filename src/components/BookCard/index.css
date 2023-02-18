@@ -1,3 +1,15 @@
+.list-item1 {
+  height: 160px;
+  margin-bottom: 10px;
+  max-width: 320px;
+  margin-right: 10px;
+}
+@media screen and (min-width: 768px) {
+  .list-item1 {
+    margin-left: 32px;
+    margin-right: 70px;
+  }
+}
 .cover-pic {
   min-width: 130px;
   height: 153px;
@@ -7,13 +19,10 @@
 .each-book {
   display: flex;
   align-items: center;
-  height: 160px;
-  margin-bottom: 10px;
 }
 @media screen and (min-width: 768px) {
   .each-book {
-    max-width: 320px;
-    margin-right: 190px;
+    min-width: 318px;
   }
 }
 .book-details {
@@ -30,5 +39,8 @@
 }
 .rating {
   display: flex;
+  font-size: 12px;
+}
+.read-status {
   font-size: 12px;
 }

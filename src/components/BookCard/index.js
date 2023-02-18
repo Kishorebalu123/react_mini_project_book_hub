@@ -8,7 +8,7 @@ const BookCard = props => {
   const {id, title, readStatus, rating, authorName, coverPic} = bookCard
   return (
     <Link className="book-link" to={`/books/${id}`}>
-      <li className="list-item">
+      <li className="list-item1">
         <div className="each-book">
           <img className="cover-pic" src={coverPic} alt="" />
           <div className="book-details">
@@ -18,7 +18,7 @@ const BookCard = props => {
               Avg Rating <BsFillStarFill className="star" />
               {rating}
             </p>
-            <p>Status: {readStatus}</p>
+            <p className="read-status">Status: {readStatus}</p>
           </div>
         </div>
       </li>

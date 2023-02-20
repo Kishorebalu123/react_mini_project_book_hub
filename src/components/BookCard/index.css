@@ -36,11 +36,15 @@
 }
 .author {
   font-size: 14px;
+  margin: 0;
 }
 .rating {
   display: flex;
+  align-items: center;
   font-size: 12px;
+  margin: 0;
 }
 .read-status {
   font-size: 12px;
+  margin: 0;
 }

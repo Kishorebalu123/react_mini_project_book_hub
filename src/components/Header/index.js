@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {AiFillCloseCircle} from 'react-icons/ai'
 
@@ -26,13 +26,13 @@ class Header extends Component {
     const {showHamburgerMenu} = this.state
 
     return (
-      <>
+      <nav>
         <div className="mobile-nav-container">
-          <nav className="nav-container">
+          <div className="nav-container">
             <Link to="/">
               <img
                 src="https://res.cloudinary.com/df5saokjj/image/upload/v1675824167/Book%20hub/Group_7732_erur1z.png"
-                alt="website-logo"
+                alt="website logo"
                 className="home-website-logo1"
               />
             </Link>
@@ -66,7 +66,7 @@ class Header extends Component {
                 alt=""
               />
             </button>
-          </nav>
+          </div>
         </div>
 
         {showHamburgerMenu && (
@@ -97,8 +97,8 @@ class Header extends Component {
             </ul>
           </div>
         )}
-      </>
+      </nav>
     )
   }
 }
-export default Header
+export default withRouter(Header)

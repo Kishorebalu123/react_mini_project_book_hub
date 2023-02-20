@@ -2,12 +2,48 @@ import {Component} from 'react'
 import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
+import Slider from 'react-slick'
 
 import Header from '../Header'
 import ReactSlick from '../ReactSlick'
 import Footer from '../Footer'
 
 import './index.css'
+
+const settings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  initialSlide: 0,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+}
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -46,7 +82,7 @@ class Home extends Component {
         id: eachBook.id,
         title: eachBook.title,
       }))
-      console.log(response.status)
+      //    console.log(response.status)
 
       this.setState({
         booksData: updatedData,
@@ -127,7 +163,17 @@ class Home extends Component {
               </Link>
             </div>
           </div>
-          <ReactSlick booksData={booksData} />
+          <ul className="top-rated-list-items">
+            <div className="main-container">
+              <div className="slick-container">
+                <Slider {...settings}>
+                  {booksData.map(eachBook => (
+                    <ReactSlick bookData={eachBook} key={eachBook.id} />
+                  ))}
+                </Slider>
+              </div>
+            </div>
+          </ul>
         </div>
 
         <div className="footer">

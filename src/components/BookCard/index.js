@@ -10,7 +10,7 @@ const BookCard = props => {
     <Link className="book-link" to={`/books/${id}`}>
       <li className="list-item1">
         <div className="each-book">
-          <img className="cover-pic" src={coverPic} alt="" />
+          <img className="cover-pic" src={coverPic} alt={title} />
           <div className="book-details">
             <h1 className="book-title">{title}</h1>
             <p className="author">{authorName}</p>

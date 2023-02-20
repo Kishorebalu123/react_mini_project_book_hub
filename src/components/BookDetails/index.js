@@ -103,7 +103,8 @@ class BookDetails extends Component {
               <h1 className="title-name">{title}</h1>
               <p className="author-name2">{authorName}</p>
               <p className="rating-card">
-                Avg Rating <BsFillStarFill className="star" />
+                Avg Rating
+                <BsFillStarFill className="star" />
                 {rating}
               </p>
               <p className="author-name2">

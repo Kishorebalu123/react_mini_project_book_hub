@@ -1,8 +1,14 @@
+.main-home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .home-container1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 360px;
+  width: 100vw;
   height: 645px;
   background-color: #f5f7fa;
 }
@@ -13,7 +19,7 @@
 }
 @media screen and (min-width: 768px) {
   .home-container1 {
-    width: 1440px;
+    width: 100vw;
     height: 935px;
   }
 }
@@ -27,7 +33,6 @@
 @media screen and (min-width: 768px) {
   .top-container {
     margin-left: 100px;
-    margin-right: 340px;
   }
 }
 
@@ -70,12 +75,12 @@
 .bg-top-rated-books {
   background-color: #ffffff;
   max-height: 203px;
-  width: 360px;
+  width: 100vw;
   margin-bottom: 70px;
 }
 @media screen and (min-width: 768px) {
   .bg-top-rated-books {
-    width: 1240px;
+    width: 90vw;
     min-height: 424px;
     margin-left: 100px;
     box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.08),
@@ -127,8 +132,6 @@
 .home-website-logo {
   height: 24px;
   width: 92px;
-  margin-left: 20px;
-  margin-right: 205px;
 }
 .bg-container {
   background-color: #e5e5e5;
@@ -182,4 +185,5 @@
 }
 .top-rated-list-items {
   list-style-type: none;
+  padding: 0;
 }

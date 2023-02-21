@@ -1,7 +1,8 @@
 .mobile-nav-container {
   display: flex;
   flex-direction: column;
-  width: 360px;
+  align-items: center;
+  width: 100vw;
   height: 56px;
   background-color: #ffffff;
 }
@@ -10,24 +11,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 86vw;
   flex-grow: 1;
 }
 
 @media screen and (min-width: 768px) {
   .mobile-nav-container {
-    width: 1440px;
     height: 89px;
   }
   .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-grow: 1;
   }
   .home-website-logo1 {
     width: 133px;
     height: 41px;
-    margin-left: 150px;
   }
 }
 
@@ -36,7 +33,6 @@
   border: 0;
   height: 16px;
   width: 16px;
-  margin-right: 24.8px;
 }
 
 @media screen and (min-width: 768px) {
@@ -62,7 +58,6 @@
   .home-website-logo1 {
     width: 92px;
     height: 24px;
-    margin: 16px 0px 16px 24px;
   }
 }
 
@@ -107,9 +102,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .logout-button {
-    margin-right: 150px;
-  }
 }
 
 .close-button {

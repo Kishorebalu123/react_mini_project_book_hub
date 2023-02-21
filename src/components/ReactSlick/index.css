@@ -6,16 +6,14 @@
   text-align: center;
 }
 .book-image {
-  height: 99px;
-  width: 146px;
+  height: 120px;
+  width: 95%;
   border-radius: 2px;
   margin: 0px;
-  padding: 12px;
 }
 @media screen and (min-width: 768px) {
   .book-image {
-    width: 350px;
-    height: 224px;
+    height: 250px;
     border-radius: 2px;
   }
 }

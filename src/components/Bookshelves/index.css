@@ -1,7 +1,7 @@
 .bookshelves-bg-section {
   display: flex;
   flex-direction: column;
-  width: 360px;
+  width: 100vw;
   height: 640px;
   overflow-y: auto;
   background-color: #f5f7fa;
@@ -9,7 +9,6 @@
 @media screen and (min-width: 768px) {
   .bookshelves-bg-section {
     height: 600px;
-    width: 1440px;
   }
   .md-main-container {
     display: flex;
@@ -19,7 +18,8 @@
   min-width: 256px;
   height: 1176px;
   background-color: #ffffff;
-  margin: 48px 0px 0px 150px;
+  margin-top: 48px;
+  margin-left: 60px;
   list-style-type: none;
 }
 .md-book-shelf-heading {
@@ -31,7 +31,6 @@
   font-size: 18px;
   color: #475569;
   margin-top: 55px;
-  margin-right: 490px;
 }
 
 @media screen and (max-width: 767px) {
@@ -56,7 +55,7 @@
 
 .input-card {
   margin-top: 24px;
-  margin-left: 24px;
+  margin-left: 20px;
   display: flex;
   width: 264px;
   height: 36px;
@@ -101,10 +100,15 @@
   }
   .md-bookshelves-container {
     display: flex;
-    min-width: 880px;
+    width: 70vw;
     justify-content: space-between;
     align-items: center;
     margin-left: 32px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .md-bookshelves-container {
+    width: 90vw;
   }
 }
 
@@ -117,6 +121,7 @@
   flex-wrap: wrap;
   width: 283px;
   margin-bottom: 0;
+  padding: 24px;
 }
 @media screen and (min-width: 768px) {
   .book-shelf-list {
@@ -129,6 +134,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  padding: 24px;
 }
 @media screen and (min-width: 768px) {
   .book-items {

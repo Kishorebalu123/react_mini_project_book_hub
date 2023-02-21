@@ -16,12 +16,12 @@
 }
 @media screen and (min-width: 768px) {
   .book-details-container {
-    width: 1440px;
+    width: 100vw;
   }
   .main-book-container {
     margin-top: 64px;
     margin-bottom: 94px;
-    width: 1140px;
+    width: 80vw;
     height: 726px;
     background-color: #ffffff;
     box-shadow: 0px 0px 1px rgba(40, 41, 61, 0.08),
@@ -35,7 +35,7 @@
 }
 
 .cover-img {
-  width: 235px;
+  width: 50%;
   height: 274px;
   margin-top: 24px;
   margin-bottom: 24px;
@@ -45,6 +45,7 @@
   .cover-img {
     margin-top: 64px;
     margin-right: 48px;
+    width: 25%;
   }
 }
 .bg-book-container {
@@ -107,7 +108,7 @@
 }
 @media screen and (min-width: 768px) {
   .hr-line {
-    width: 1012px;
+    width: 70vw;
     margin-left: 64px;
   }
   .about {

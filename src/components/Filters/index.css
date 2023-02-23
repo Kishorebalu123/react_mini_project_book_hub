@@ -26,5 +26,6 @@
   }
   .non-active {
     color: #475569;
+    background-color: transparent;
   }
 }

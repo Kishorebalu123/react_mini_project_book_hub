@@ -36,7 +36,8 @@
 }
 
 .md-login-image {
-  width: 95%;
+  width: 50vw;
+  height: 100vh;
   background-size: cover;
   margin-right: 20px;
 }
@@ -91,4 +92,7 @@
 .error-message {
   color: #ef4444;
   font-size: 14px;
+}
+.show-password-label {
+  font-size: 12px;
 }

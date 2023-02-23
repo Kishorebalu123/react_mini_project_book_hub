@@ -5,7 +5,13 @@ import Cookies from 'js-cookie'
 import './index.css'
 
 class Login extends Component {
-  state = {username: '', password: '', errorMsg: '', showSubmitError: false}
+  state = {
+    isChecked: false,
+    username: '',
+    password: '',
+    errorMsg: '',
+    showSubmitError: false,
+  }
 
   onSubmitSuccess = jwtToken => {
     const {history} = this.props
@@ -44,14 +50,14 @@ class Login extends Component {
   }
 
   renderPasswordField = () => {
-    const {password} = this.state
+    const {password, isChecked} = this.state
     return (
       <>
         <label className="input-label" htmlFor="password">
           Password
         </label>
         <input
-          type="password"
+          type={isChecked ? 'text' : 'password'}
           id="password"
           className="password-input-field"
           value={password}
@@ -79,6 +85,20 @@ class Login extends Component {
         />
       </>
     )
+  }
+
+  showPasswordField = () => (
+    <>
+      <input type="checkBox" id="checkBox" onClick={this.showPassword} />
+      <label className="show-password-label" htmlFor="checkBox">
+        Show Password
+      </label>
+    </>
+  )
+
+  showPassword = () => {
+    const {isChecked} = this.state
+    this.setState({isChecked: !isChecked})
   }
 
   render() {
@@ -112,6 +132,10 @@ class Login extends Component {
           <form className="form-control" onSubmit={this.onSubmitForm}>
             <div className="input-container">{this.renderUsernameField()}</div>
             <div className="input-container">{this.renderPasswordField()}</div>
+            <div className="show-password-container">
+              {this.showPasswordField()}
+            </div>
+
             {showSubmitError && <p className="error-message">{errorMsg}</p>}
             <button type="submit" className="login-button">
               Login

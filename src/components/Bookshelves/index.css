@@ -108,7 +108,10 @@
 }
 @media screen and (min-width: 1024px) {
   .md-bookshelves-container {
-    width: 90vw;
+    width: 80vw;
+  }
+  .input-card {
+    margin-left: 400px;
   }
 }
 
